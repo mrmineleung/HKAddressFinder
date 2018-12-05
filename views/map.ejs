@@ -1,0 +1,45 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./head %>
+    
+</head>
+<body class="container">
+
+<header>
+    <% include ./header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Map</h1>
+        <br>
+        
+<div id="mapid" style="height: 400px;" ></div>
+
+<script>
+var map = L.map('mapid').setView([<%= lat %>, <%= lng %>], 18);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([<%= lat %>, <%= lng %>]).addTo(map);
+  
+
+</script>
+<br>
+    <a href="./" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+    
+    </div>
+    
+</main>
+
+<footer>
+    <% include ./footer %>
+</footer>
+
+</body>
+</html>

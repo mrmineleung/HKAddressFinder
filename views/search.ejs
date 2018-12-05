@@ -1,0 +1,66 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./head %>
+    
+</head>
+<body class="container">
+
+<header>
+    <% include ./header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Result of <%= value %> </h1>
+        <p>Total: <%= eng_address.length %></p>
+        
+        <a href="./" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back</a><br />
+        </br>
+        <table class="table table-bordered table-hover" >
+            <thead>
+        <tr><th>No.</th><th>Address</th><th>Coord</th></tr>
+        </thead>
+        <% for (var result=0; result < eng_address.length; result++) { var no = result;%>
+        <tr><td><%=++no %></td>
+        <td><%=eng_address[result] %>
+
+</td>
+        <td><%= coord[result].lat %>, <%= coord[result].lng %>  
+        <a href="/map?lat=<%= coord[result].lat %>&lng=<%= coord[result].lng %>">View on Map</a>
+ </td>
+        <td><button class="btn btn-primary" data-clipboard-text="<%=eng_address[result]%>"><span class="glyphicon glyphicon-copy"></span> Copy to clipboard</button></td>
+        </tr>
+        
+    
+        <% } %>
+        
+        <script src="./dist/clipboard.min.js"></script>
+        <script>
+    
+    var clipboard = new ClipboardJS('.btn');
+    
+    console.log(clipboard);
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    </script>
+        
+        </table>
+    <a href="./" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+    
+    </div>
+    
+</main>
+
+<footer>
+    <% include ./footer %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "HKAddressFinder",
+  "version": "1.0.0",
+  "description": "Easily to find the english address in Hong Kong",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Mine Leung",
+  "dependencies": {
+    "clipboard": "^2.0.1"
+  },
+  "devDependencies": {}
+}
