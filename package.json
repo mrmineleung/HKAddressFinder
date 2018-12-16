@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Easily to find the english address in Hong Kong",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server"
   },
   "author": "Mine Leung",
   "dependencies": {
     "clipboard": "^2.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engine": "node >= 0.10.0"
 }
