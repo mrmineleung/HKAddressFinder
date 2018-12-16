@@ -6,8 +6,8 @@ var app = express();
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
-app.listen(8080, function() {
-  console.log('It\'s working on port 8080!');
+app.listen(process.env.PORT || 8099, function() {
+  console.log('It\'s working');
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
