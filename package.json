@@ -8,6 +8,7 @@
   "author": "Mine Leung",
   "dependencies": {
     "express": "*",
+    "request": "*",
         "ejs": "*",
 "body-parser": "*",
     "clipboard": "^2.0.1",
