@@ -15,12 +15,6 @@ app.use(bodyParser.json());
 
 var eng_address = [];
 
-// Log
-app.use(function(req,res,next) {
-  console.log(req.method + ' ' + req.url +
-              ' was requested at ' + Date(Date.now()).toString());
-  next();
-});
 
 app.get('/', function(req, res, next) {
 
