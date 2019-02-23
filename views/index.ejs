@@ -23,7 +23,7 @@
             <%= e %></div>
         <% } %>
         <form method="get" action="/search">
-        <input type="text" class="form-control input-lg" placeholder="Part of address..." name="id">
+        <input type="text" class="form-control input-lg" placeholder="Building Name / Street Name / Estate Name" name="id">
         <br/>
         <button type="submit" class="btn btn-primary btn-block btn-lg"><span class="glyphicon glyphicon glyphicon-search"> Search</span></button>
         </form></div>
@@ -33,7 +33,17 @@
         <br><br>
     
 </main>
-
+<script>
+$(function(){
+    
+    var btn = document.querySelector('.btn');
+    
+    btn.addEventListener("click", function() {
+        btn.innerHTML = '<span class="glyphicon glyphicon glyphicon-time">'+ ' Loading...' +'</span>';
+    }, false);
+    
+});
+</script>
 <footer>
     <% include ./footer %>
 </footer>
